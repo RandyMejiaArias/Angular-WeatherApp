@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { CurrentWeatherService } from './services/current-weather.service';
-import { ForecastService } from './services/forecast.service';
+import { GeolocationService } from './services/geolocation.service';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +7,12 @@ import { ForecastService } from './services/forecast.service';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'Angular-WeatherApp';
+  title = 'Weather App';
 
-  constructor(private forecastService : ForecastService){
+  constructor(public geolocationService : GeolocationService){
 
   }
 
   ngOnInit(){
-    this.forecastService.weather$.subscribe(console.log);
   }
 }
